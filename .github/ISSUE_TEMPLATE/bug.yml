@@ -1,0 +1,35 @@
+# The form `:bug` and Help → Report a Bug… open (electron/help.ts); `version` and `os` are filled from the URL.
+name: Bug report
+description: Something in Paperkites is broken
+labels: [beta, bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Did you lose or damage any notes?
+      options:
+        - 'No'
+        - Yes, a note or file was lost or changed
+        - Paperkites crashed or wouldn't open
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Paperkites version
+  - type: input
+    id: os
+    attributes:
+      label: System
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log
+      description: "`:logs` (Help → Reveal Logs) shows main.log. Drag it here, or paste the last lines. It holds no note text."
